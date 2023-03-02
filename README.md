@@ -1,24 +1,28 @@
-# README
+# tweet
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 『準備』
+```:コマンドプロンプト
+//railsファイル群を作成
+rails new tweet -G
 
-Things you may want to cover:
+//移動
+cd tweet/
+ridk exec pacman -S mingw-w64-x86_64-sqlite3
+```
 
-* Ruby version
+```:Gemfile
+//railsファイル群を作成
+# 一番下に追加
+gem 'devise'
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```:コマンドプロンプト
+ # gemのダウンロード
+bundle install
+# deviseの機能のインストール
+rails g devise:install
+# deviseの機能を取り込んだUserモデルの作成
+rails g devise User
+#(deviseの機能ではない)usersコントローラの作成。
+rails g controller users index show
+```
