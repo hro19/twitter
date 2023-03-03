@@ -8,6 +8,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @tweets = @user.tweets
     # mapメソッドを使いfavoriteをtweetの情報に変換
-    @favorite_tweets = @user.favorites.map{|favorite| favorite.tweet}
+    @favorite_tweets = @user.favorite_tweets
   end
 end
