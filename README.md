@@ -16,6 +16,7 @@ ridk exec pacman -S mingw-w64-x86_64-sqlite3
 gem 'devise'
 ```
 
+## 1対多を設計
 ```:コマンドプロンプト
  # gemのダウンロード
 bundle install
@@ -25,4 +26,11 @@ rails g devise:install
 rails g devise User
 #(deviseの機能ではない)usersコントローラの作成。
 rails g controller users index show
+```
+
+## 多対多(M:N)を設計
+```:コマンドプロンプト
+rails g model Favorite user_id:integer tweet_id:integer
+rails g controller favorites create destroy
+rails db:migrate
 ```
