@@ -8,3 +8,10 @@
   <hr>
   <p><span>ツイート内容: </span><%=link_to tweet.body, tweet_path(tweet.id) %></p>
 <% end %>
+
+<hr>
+
+<% @favorite_tweets.each do |tweet| %>
+  <hr>
+  <p><span>ファボツイート内容: </span><%=link_to tweet.body, tweet_path(tweet.id) %></p>
+<% end %>
