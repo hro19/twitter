@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
-  get 'tweets/new'
-  get 'tweets/index'
-  get 'tweets/show'
-  get 'tweets/create'
-  get 'users/index'
-  get 'users/show'
-  devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root 'tweets#index'  # 追加
+
+
+  devise_for :users
+  resources :tweets  # 追加
+  resources :users  # 追加
+  
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
