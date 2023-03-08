@@ -37,3 +37,5 @@ rails g model Favorite user_id:integer tweet_id:integer
 rails g controller favorites create destroy
 rails db:migrate
 ```
+
+## 多対多(M:N)(自己結合)を設計
