@@ -39,3 +39,8 @@ rails db:migrate
 ```
 
 ## 多対多(M:N)(自己結合)を設計
+```:コマンドプロンプト
+rails g model relationship following_id:integer follower_id:integer
+rails g controller relationships create destroy
+rails db:migrate
+```
