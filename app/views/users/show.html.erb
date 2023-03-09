@@ -1,17 +1,35 @@
 <h1>Users#show</h1>
 <p>Find me in app/views/users/show.html.erb</p>
 <hr>
-<p><span>email: </span><%= @user.email %></p>
+<p><span>email: </span><%= @user.email %></p>z
 
-<!-- 追加 -->
-<% @tweets.each do |tweet| %>
-  <hr>
-  <p><span>ツイート内容: </span><%=link_to tweet.body, tweet_path(tweet.id) %></p>
-<% end %>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ツイート内容</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @tweets.each do |tweet| %>
+      <tr>
+          <td><%=link_to tweet.body, tweet_path(tweet.id) %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
 
-<hr>
 
-<% @favorite_tweets.each do |tweet| %>
-  <hr>
-  <p><span>ファボツイート内容: </span><%=link_to tweet.body, tweet_path(tweet.id) %></p>
-<% end %>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">ファボツイート内容</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @favorite_tweets.each do |favorite_tweet| %>
+      <tr>
+          <td><%=link_to favorite_tweet.body, tweet_path(favorite_tweet.id) %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
